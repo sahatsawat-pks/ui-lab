@@ -2,112 +2,425 @@
   "id": "a3eb166e-1dbd-432a-a818-64362c8ae122",
   "version": "2.0",
   "name": "ui-lab",
-  "url": "https://www.selenium.dev/",
-  "tests": [{
-    "id": "67b3666b-17b8-4001-8d36-152ca4a73db6",
-    "name": "web form",
-    "commands": [{
-      "id": "538f7bd6-1d2c-4bc8-87e9-0b8ec6532a60",
-      "comment": "",
-      "command": "open",
-      "target": "selenium/web/web-form.html",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "7b34969a-f38b-493c-9950-b43ac9273492",
-      "comment": "",
-      "command": "setWindowSize",
-      "target": "899x849",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "24ac161e-5ba3-4335-a681-f9a33ae13a39",
-      "comment": "",
-      "command": "click",
-      "target": "id=my-text-id",
-      "targets": [
-        ["id=my-text-id", "id"],
-        ["name=my-text", "name"],
-        ["css=#my-text-id", "css:finder"],
-        ["xpath=//input[@id='my-text-id']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f31b7f2b-86b0-4100-b497-fbb9839eafba",
-      "comment": "",
-      "command": "type",
-      "target": "id=my-text-id",
-      "targets": [
-        ["id=my-text-id", "id"],
-        ["name=my-text", "name"],
-        ["css=#my-text-id", "css:finder"],
-        ["xpath=//input[@id='my-text-id']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "Hello Selenium"
-    }, {
-      "id": "0b5f47b0-2b09-4ac2-bdbf-fe7973e13648",
-      "comment": "",
-      "command": "select",
-      "target": "name=my-select",
-      "targets": [],
-      "value": "label=Two"
-    }, {
-      "id": "678282a9-9ccc-403e-a2e3-971cad3c1ee9",
-      "comment": "",
-      "command": "click",
-      "target": "css=.form-select > option:nth-child(3)",
-      "targets": [
-        ["css=.form-select > option:nth-child(3)", "css:finder"],
-        ["xpath=//option[@value='2']", "xpath:attributes"],
-        ["xpath=//option[3]", "xpath:position"],
-        ["xpath=//option[contains(.,'Two')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "2b45fee4-a11b-489b-818b-7092423b1c56",
-      "comment": "",
-      "command": "click",
-      "target": "xpath=//button[@type='submit']",
-      "targets": [
-        ["css=.btn", "css:finder"],
-        ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "39e070b4-b48d-4708-b4f7-5a3e3b108525",
-      "comment": "",
-      "command": "waitForElementVisible",
-      "target": "id=message",
-      "targets": [],
-      "value": "10000"
-    }, {
-      "id": "7298a640-73be-41bc-acad-1c31ddec0024",
-      "comment": "",
-      "command": "assertTitle",
-      "target": "Web form - target page",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "84916823-2af4-4eca-9b44-c946aceb76d6",
-      "comment": "",
-      "command": "assertText",
-      "target": "id=message",
-      "targets": [],
-      "value": "Received!"
-    }]
-  }],
-  "suites": [{
-    "id": "0954db13-1cb6-4698-9575-600b0b2c85a5",
-    "name": "Default Suite",
-    "persistSession": false,
-    "parallel": false,
-    "timeout": 300,
-    "tests": ["67b3666b-17b8-4001-8d36-152ca4a73db6"]
-  }],
-  "urls": ["https://www.selenium.dev/"],
+  "url": "https://quickpizza.grafana.com/",
+  "tests": [
+    {
+      "id": "67b3666b-17b8-4001-8d36-152ca4a73db6",
+      "name": "web form",
+      "commands": [
+        {
+          "id": "538f7bd6-1d2c-4bc8-87e9-0b8ec6532a60",
+          "comment": "",
+          "command": "open",
+          "target": "https://www.selenium.dev/selenium/web/web-form.html",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7b34969a-f38b-493c-9950-b43ac9273492",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "899x849",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "24ac161e-5ba3-4335-a681-f9a33ae13a39",
+          "comment": "",
+          "command": "click",
+          "target": "id=my-text-id",
+          "targets": [
+            [
+              "id=my-text-id",
+              "id"
+            ],
+            [
+              "name=my-text",
+              "name"
+            ],
+            [
+              "css=#my-text-id",
+              "css:finder"
+            ],
+            [
+              "xpath=//input[@id='my-text-id']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//input",
+              "xpath:position"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "f31b7f2b-86b0-4100-b497-fbb9839eafba",
+          "comment": "",
+          "command": "type",
+          "target": "id=my-text-id",
+          "targets": [
+            [
+              "id=my-text-id",
+              "id"
+            ],
+            [
+              "name=my-text",
+              "name"
+            ],
+            [
+              "css=#my-text-id",
+              "css:finder"
+            ],
+            [
+              "xpath=//input[@id='my-text-id']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//input",
+              "xpath:position"
+            ]
+          ],
+          "value": "Hello Selenium"
+        },
+        {
+          "id": "0b5f47b0-2b09-4ac2-bdbf-fe7973e13648",
+          "comment": "",
+          "command": "select",
+          "target": "name=my-select",
+          "targets": [],
+          "value": "label=Two"
+        },
+        {
+          "id": "678282a9-9ccc-403e-a2e3-971cad3c1ee9",
+          "comment": "",
+          "command": "click",
+          "target": "css=.form-select > option:nth-child(3)",
+          "targets": [
+            [
+              "css=.form-select > option:nth-child(3)",
+              "css:finder"
+            ],
+            [
+              "xpath=//option[@value='2']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//option[3]",
+              "xpath:position"
+            ],
+            [
+              "xpath=//option[contains(.,'Two')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "2b45fee4-a11b-489b-818b-7092423b1c56",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[@type='submit']",
+          "targets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=//button[@type='submit']",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//button",
+              "xpath:position"
+            ],
+            [
+              "xpath=//button[contains(.,'Submit')]",
+              "xpath:innerText"
+            ]
+          ],
+          "value": ""
+        },
+        {
+          "id": "39e070b4-b48d-4708-b4f7-5a3e3b108525",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=message",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "7298a640-73be-41bc-acad-1c31ddec0024",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "Web form - target page",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "84916823-2af4-4eca-9b44-c946aceb76d6",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=message",
+          "targets": [],
+          "value": "Received!"
+        }
+      ]
+    },
+    {
+      "id": "7b787913-a5f9-4507-9b5c-5a8a8514d42e",
+      "name": "QP-01 customer",
+      "commands": [
+        {
+          "id": "0ae94ed2-8ee5-456b-9f5b-0efd5f54411f",
+          "comment": "",
+          "command": "open",
+          "target": "https://quickpizza.grafana.com/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0f1ae713-fb26-4ddf-b7f7-a0e4e9f16a48",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=h1",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "708b5d55-ce02-4ebb-9c9a-6d5e0282398b",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=h1",
+          "targets": [],
+          "value": "Looking to break out of your pizza routine?"
+        },
+        {
+          "id": "9f029c15-86ae-440c-a0ee-6d1df0a20aae",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//label[.//span[normalize-space()='Advanced']]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "671c532e-4532-44b2-b729-fe9263c7f927",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "c90d01d4-b086-4a62-b946-85002520b95a",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=select",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "45a2662e-1745-4513-83b8-779c026b1496",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "78ffef15-4a50-4b4b-9cd8-04e261cfd1c0",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "6bbe2d5b-8ef9-40b9-84a1-19793e37b31c",
+          "comment": "",
+          "command": "executeScript",
+          "target": "const d = new Date(); const two = (n) => String(n).padStart(2, '0'); const day = d.getFullYear() + two(d.getMonth() + 1) + two(d.getDate()); const time = two(d.getHours()) + two(d.getMinutes()) + two(d.getSeconds()); return 'Lab Pizza ' + day + '-' + time;",
+          "targets": [],
+          "value": "pizzaName"
+        },
+        {
+          "id": "8fafc9d5-9eb8-4243-b491-a99ffd50ed79",
+          "comment": "",
+          "command": "echo",
+          "target": "${pizzaName}",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "232142b5-488d-4fa4-b85a-235bbc847372",
+          "comment": "",
+          "command": "type",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "600"
+        },
+        {
+          "id": "6987584b-8f65-4bc9-9a42-5e6e9dec08a1",
+          "comment": "",
+          "command": "waitForElementPresent",
+          "target": "xpath=//select/option[normalize-space()='Knife']",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "bb7995af-9a43-4591-8658-cdef51026f37",
+          "comment": "",
+          "command": "addSelection",
+          "target": "css=select",
+          "targets": [],
+          "value": "label=Knife"
+        },
+        {
+          "id": "a7bfe664-080a-4129-a141-5e633f1ab808",
+          "comment": "",
+          "command": "click",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "cf3cd161-1adc-4ec2-b307-f632eeaa1be2",
+          "comment": "",
+          "command": "type",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "${pizzaName}"
+        },
+        {
+          "id": "380c98dd-8255-4744-b42f-9bffca6261dd",
+          "comment": "",
+          "command": "assertValue",
+          "target": "xpath=//label[normalize-space()='Max Calories per Slice']/../input",
+          "targets": [],
+          "value": "600"
+        },
+        {
+          "id": "4f6c7456-5dc8-47af-bb5f-90f78621e7d3",
+          "comment": "",
+          "command": "assertSelectedLabel",
+          "target": "css=select",
+          "targets": [],
+          "value": "Knife"
+        },
+        {
+          "id": "8cbb8bec-2be5-4901-8853-58c7396b75d6",
+          "comment": "",
+          "command": "assertChecked",
+          "target": "id=default-checkbox",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "49c716d1-8c59-43b0-8626-5ae4462c8a0d",
+          "comment": "",
+          "command": "assertValue",
+          "target": "css=input#pizza-name",
+          "targets": [],
+          "value": "${pizzaName}"
+        },
+        {
+          "id": "fa3a095f-66e4-4097-b92f-6248f42e95fa",
+          "comment": "",
+          "command": "click",
+          "target": "name=pizza-please",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "7b28e9d5-e7ff-4e8a-a9f6-73ddc773e7b7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//p[starts-with(., 'Name:')]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "4839f188-df72-46f1-9461-58fc0f43fef1",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//p[starts-with(., 'Name:')]",
+          "targets": [],
+          "value": "Name: ${pizzaName}"
+        },
+        {
+          "id": "b778e746-5064-4ec1-b829-f0d93b4352ec",
+          "comment": "",
+          "command": "assertNotText",
+          "target": "xpath=//p[starts-with(., 'Tool:')]",
+          "targets": [],
+          "value": "Tool: Knife"
+        },
+        {
+          "id": "0feb1ec8-6d9a-4a78-9ece-c932ae389068",
+          "comment": "",
+          "command": "storeText",
+          "target": "xpath=//p[starts-with(., 'Calories per slice:')]",
+          "targets": [],
+          "value": "calories"
+        },
+        {
+          "id": "05a4d93d-ad23-4bcd-9d56-133e6c98b165",
+          "comment": "",
+          "command": "executeScript",
+          "target": "return parseInt(${calories}.split(':')[1]) <= 600;",
+          "targets": [],
+          "value": "caloriesOk"
+        },
+        {
+          "id": "dbb1b11b-78dc-43fa-b801-bf9c019759f5",
+          "comment": "",
+          "command": "assert",
+          "target": "caloriesOk",
+          "targets": [],
+          "value": "true"
+        },
+        {
+          "id": "092e26ab-5daf-4d55-b7b5-e4556d626b9a",
+          "comment": "",
+          "command": "click",
+          "target": "name=rate-5",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6834d0d7-5209-4f42-9ecd-44fb13d57fef",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=rate-result",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "10cd1d0c-fe85-4d7b-aa0f-5333de87395a",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=rate-result",
+          "targets": [],
+          "value": "Please log in first."
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "0954db13-1cb6-4698-9575-600b0b2c85a5",
+      "name": "Default Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "67b3666b-17b8-4001-8d36-152ca4a73db6",
+        "7b787913-a5f9-4507-9b5c-5a8a8514d42e"
+      ]
+    }
+  ],
+  "urls": [
+    "https://www.selenium.dev/",
+    "https://quickpizza.grafana.com/"
+  ],
   "plugins": []
 }
