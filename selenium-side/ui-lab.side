@@ -97,7 +97,7 @@
       "command": "assertText",
       "target": "id=message",
       "targets": [],
-      "value": "Received!"
+      "value": "Received"
     }]
   }],
   "suites": [{
