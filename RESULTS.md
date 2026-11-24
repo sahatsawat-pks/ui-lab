@@ -27,11 +27,59 @@ Tool parts that I chose:
 - Step 1.6, the line Tests: of both runs: `Tests:       2 passed, 2 total` | Run 2: `Tests:       2 passed, 2 total`
 - Step 1.7, one line of QP01customerTest.java that needs rewriting, and why: `assertThat(value, is("vars.get("pizzaName").toString()"));` — it does not compile because double quotes inside the string literal break Java syntax (and even unescaped it would compare against the literal text rather than the generated pizza name stored in `vars`).
 ## Part 2: Selenium WebDriver in Java
-- Step 2.4, the failure line for the wrong title:
-- Step 2.15, QP01Test run 1, result and time:
+- Step 2.4, the failure line for the wrong title: [ERROR]   FirstTest.webFormOpens:18 expected: <Web Form> but was: <Web form>
+- Step 2.15, QP01Test run 1, result and time: 
+```
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.914 s
+[INFO] Finished at: 2026-11-25T01:23:08+07:00
+[INFO] ------------------------------------------------------------------------
+```
 - Step 2.15, QP01Test run 2, result and time:
+```
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.557 s
+[INFO] Finished at: 2026-11-25T01:23:40+07:00
+[INFO] ------------------------------------------------------------------------
+```
 - Step 2.20, full run 1, time and number of tests:
+```
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.684 s
+[INFO] Finished at: 2026-11-25T01:34:52+07:00
+[INFO] ------------------------------------------------------------------------
+```
 - Step 2.20, full run 2, time and number of tests:
+```
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.926 s
+[INFO] Finished at: 2026-11-25T01:35:32+07:00
+[INFO] ------------------------------------------------------------------------
+```
 ## Part 3: Robot Framework
 - robot --version:
 - Step 3.2, failure message for the wrong title:
