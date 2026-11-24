@@ -109,6 +109,9 @@ Elapsed Time:	00:00:06.944
 ```
 ## Part 4: Cypress
 - node --version, npm --version and npx cypress version:
+  - node --version: v26.0.0
+  - npm --version: 12.2.3
+  - npx cypress version: 16.2.1 (stable)
 - Step 4.3, failure message for the wrong title:
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
 - Step 4.7, the line of the admin list that shows your pizza:
