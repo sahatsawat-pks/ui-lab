@@ -88,7 +88,25 @@ FAIL |
 Title should have been 'Web Form' but was 'Web form'.
 ```
 - Step 3.8, run 1, result, elapsed time and pizza name:
+```
+Status:	All tests passed
+Documentation:	
+Test case QP-01, A custom pizza reaches the admin list.
+
+Start Time:	20261125 02:48:29.689
+End Time:	20261125 02:48:36.639
+Elapsed Time:	00:00:06.950
+```
 - Step 3.8, run 2, result, elapsed time and pizza name:
+```
+Status:	All tests passed
+Documentation:	
+Test case QP-01, A custom pizza reaches the admin list.
+
+Start Time:	20261125 02:48:39.994
+End Time:	20261125 02:48:46.938
+Elapsed Time:	00:00:06.944
+```
 ## Part 4: Cypress
 - node --version, npm --version and npx cypress version:
 - Step 4.3, failure message for the wrong title:
