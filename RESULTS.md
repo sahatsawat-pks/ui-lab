@@ -22,10 +22,10 @@ Tool parts that I chose:
 - Firefox version and Node.js version:
 - Step 1.4, the line of the failed check and the line Tests: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received` | `Tests:       1 failed, 1 total`
 - Step 1.5, target chosen for Submit, and why the recorded one was fragile: `xpath=//button[@type='submit']`; the recorded `css=.btn` relies on a visual/styling class that other buttons can share and matches the first `.btn` element, so adding another button above it or changing styling classes can break it, whereas `xpath=//button[@type='submit']` targets a submit button by its semantic `type` attribute.
-- Step 1.6, commands changed, added or deleted after recording:
-- Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo:
-- Step 1.6, the line Tests: of both runs:
-- Step 1.7, one line of QP01customerTest.java that needs rewriting, and why:
+- Step 1.6, commands changed, added or deleted after recording: Added explicit waits (`wait for element visible` / `wait for element present`), assertions (`assert text`, `assert value`, `assert selected label`, `assert checked`, `assert not text`, `assert`), `execute script` (for `pizzaName` and `<= 600` calorie check), `echo ${pizzaName}`, and `store text` (`calories`); updated targets/values to use the `Advanced` label, `Max Calories per Slice` label-to-input XPath, `add selection` `label=Knife`, `css=input#pizza-name`, `${pizzaName}`, `name=pizza-please`, and `name=rate-5`; deleted extra/redundant recorded steps and placeholder text so the test matches the 29 commands.
+- Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo: `Lab Pizza 20261124-234719`
+- Step 1.6, the line Tests: of both runs: `Tests:       2 passed, 2 total` | Run 2: `Tests:       2 passed, 2 total`
+- Step 1.7, one line of QP01customerTest.java that needs rewriting, and why: `assertThat(value, is("vars.get("pizzaName").toString()"));` — it does not compile because double quotes inside the string literal break Java syntax (and even unescaped it would compare against the literal text rather than the generated pizza name stored in `vars`).
 ## Part 2: Selenium WebDriver in Java
 - Step 2.4, the failure line for the wrong title:
 - Step 2.15, QP01Test run 1, result and time:
