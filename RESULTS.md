@@ -21,7 +21,7 @@ Tool parts that I chose:
 ## Part 1: Selenium IDE
 - Firefox version and Node.js version:
 - Step 1.4, the line of the failed check and the line Tests: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received` | `Tests:       1 failed, 1 total`
-- Step 1.5, target chosen for Submit, and why the recorded one was fragile:
+- Step 1.5, target chosen for Submit, and why the recorded one was fragile: `xpath=//button[@type='submit']`; the recorded `css=.btn` relies on a visual/styling class that other buttons can share and matches the first `.btn` element, so adding another button above it or changing styling classes can break it, whereas `xpath=//button[@type='submit']` targets a submit button by its semantic `type` attribute.
 - Step 1.6, commands changed, added or deleted after recording:
 - Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo:
 - Step 1.6, the line Tests: of both runs:

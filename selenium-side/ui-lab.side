@@ -2,7 +2,7 @@
   "id": "a3eb166e-1dbd-432a-a818-64362c8ae122",
   "version": "2.0",
   "name": "ui-lab",
-  "url": "https://www.selenium.dev",
+  "url": "https://www.selenium.dev/",
   "tests": [{
     "id": "67b3666b-17b8-4001-8d36-152ca4a73db6",
     "name": "web form",
@@ -10,7 +10,7 @@
       "id": "538f7bd6-1d2c-4bc8-87e9-0b8ec6532a60",
       "comment": "",
       "command": "open",
-      "target": "/selenium/web/web-form.html",
+      "target": "selenium/web/web-form.html",
       "targets": [],
       "value": ""
     }, {
@@ -69,7 +69,7 @@
       "id": "2b45fee4-a11b-489b-818b-7092423b1c56",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//button[@type='submit']",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
