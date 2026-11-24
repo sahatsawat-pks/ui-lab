@@ -11,13 +11,13 @@ Tool parts that I chose:
 - Step 0.5, pizza name, tool and calories of the run by hand:
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
-| 6 | | |
-| 7 | | |
+| 1 | Opened [https://quickpizza.grafana.com](https://quickpizza.grafana.com); heading displayed Looking to break out of your pizza routine? | |
+| 2 | Clicked Advanced; Max Calories per Slice, Excluded tools, Must be vegetarian, and Custom Pizza Name appeared | Pass |
+| 3 | Set calories to 600, selected Knife, checked Must be vegetarian, entered `Lab Pizza 20261124-222500`; fields showed those values | Pass |
+| 4 | Clicked Pizza, Please!; recommendation displayed `Lab Pizza 20261124-222500`, tool `Pizza cutter`, and `500` calories per slice | Pass |
+| 5 | Clicked Love it! while logged out; page showed Please log in first. | Pass |
+| 6 | Opened /admin, entered admin and admin, clicked Sign in; page showed Latest pizza recommendations | Pass |
+| 7 | Found Lab Pizza 20261124-222500 in the list showing (tool=`Pizza cutter`, ...) | Pass |
 ## Part 1: Selenium IDE
 - Firefox version and Node.js version:
 - Step 1.4, the line of the failed check and the line Tests:

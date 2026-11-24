@@ -1,0 +1,92 @@
+{
+  "id": "a3eb166e-1dbd-432a-a818-64362c8ae122",
+  "version": "2.0",
+  "name": "ui-lab",
+  "url": "https://www.selenium.dev",
+  "tests": [{
+    "id": "67b3666b-17b8-4001-8d36-152ca4a73db6",
+    "name": "web form",
+    "commands": [{
+      "id": "538f7bd6-1d2c-4bc8-87e9-0b8ec6532a60",
+      "comment": "",
+      "command": "open",
+      "target": "/selenium/web/web-form.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b34969a-f38b-493c-9950-b43ac9273492",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "899x849",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "24ac161e-5ba3-4335-a681-f9a33ae13a39",
+      "comment": "",
+      "command": "click",
+      "target": "id=my-text-id",
+      "targets": [
+        ["id=my-text-id", "id"],
+        ["name=my-text", "name"],
+        ["css=#my-text-id", "css:finder"],
+        ["xpath=//input[@id='my-text-id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f31b7f2b-86b0-4100-b497-fbb9839eafba",
+      "comment": "",
+      "command": "type",
+      "target": "id=my-text-id",
+      "targets": [
+        ["id=my-text-id", "id"],
+        ["name=my-text", "name"],
+        ["css=#my-text-id", "css:finder"],
+        ["xpath=//input[@id='my-text-id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Hello Selenium"
+    }, {
+      "id": "0b5f47b0-2b09-4ac2-bdbf-fe7973e13648",
+      "comment": "",
+      "command": "select",
+      "target": "name=my-select",
+      "targets": [],
+      "value": "label=Two"
+    }, {
+      "id": "678282a9-9ccc-403e-a2e3-971cad3c1ee9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.form-select > option:nth-child(3)",
+      "targets": [
+        ["css=.form-select > option:nth-child(3)", "css:finder"],
+        ["xpath=//option[@value='2']", "xpath:attributes"],
+        ["xpath=//option[3]", "xpath:position"],
+        ["xpath=//option[contains(.,'Two')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b45fee4-a11b-489b-818b-7092423b1c56",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0954db13-1cb6-4698-9575-600b0b2c85a5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["67b3666b-17b8-4001-8d36-152ca4a73db6"]
+  }],
+  "urls": ["https://www.selenium.dev/"],
+  "plugins": []
+}
