@@ -81,8 +81,12 @@ Tool parts that I chose:
 [INFO] ------------------------------------------------------------------------
 ```
 ## Part 3: Robot Framework
-- robot --version:
-- Step 3.2, failure message for the wrong title:
+- robot --version: Robot Framework 7.5.1 (Python 3.14.7 on darwin)
+- Step 3.2, failure message for the wrong title: 
+```
+FAIL |
+Title should have been 'Web Form' but was 'Web form'.
+```
 - Step 3.8, run 1, result, elapsed time and pizza name:
 - Step 3.8, run 2, result, elapsed time and pizza name:
 ## Part 4: Cypress
