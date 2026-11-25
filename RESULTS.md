@@ -127,15 +127,68 @@ Elapsed Time:	00:00:06.944
 
 ```
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
-- Step 4.7, the line of the admin list that shows your pizza:
-- Step 4.8, run 1, result, duration and pizza name:
+```
+tool: "Scissors"
+"calories": 475
+```
+- Step 4.7, the line of the admin list that shows your pizza: 
+```
+Lab Pizza 20261125-185939 (tool=Pizza cutter, ingredients_number=5) (newest)
+The Black Margherita (tool=Scissors, ingredients_number=6)
+The Wise Marinara (tool=Scissors, ingredients_number=7)
+The Fierce Capricciosa (tool=Scissors, ingredients_number=7)
+A Fast Funghi (tool=Knife, ingredients_number=7)
+An Able Capricciosa (tool=Pizza cutter, ingredients_number=5)
+A Mammoth Quattro Formaggi (tool=Scissors, ingredients_number=6)
+A Small Carbonara (tool=Pizza cutter, ingredients_number=5)
+A Quiet Fungi e Olive (tool=Scissors, ingredients_number=8)
+An Able Margherita (tool=Scissors, ingredients_number=5)
+A Rough Pugliese (tool=Knife, ingredients_number=8)
+An Ugly Siciliana (tool=Knife, ingredients_number=7)
+A Black Frutti di Mare (tool=Scissors, ingredients_number=7)
+An Orange Funghi (tool=Knife, ingredients_number=5)
+The Tame Frutti di Mare (tool=Scissors, ingredients_number=6)
+```
+- Step 4.8, run 1, result, duration and pizza name: 
+```
+====================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  pizza-scenario.cy.js                     00:11        1  1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  web-form.cy.js                           00:02        1  1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        00:14        2  2        -        -        -  
+
+Pizza Name: Lab Pizza 20261125-190657
+```
 - Step 4.8, run 2, result, duration and pizza name:
+```
+====================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  pizza-scenario.cy.js                     00:07        1  1        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  web-form.cy.js                           00:01        1  1        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        00:09        2  2        -        -        -  
+
+Pizza Name: Lab Pizza 20261125-190850
+```
 - Step 4.9 (optional), browser and result:
 ## Part B
-1.
-2.
-3.
-4.
-5.
-6.
-7.
+1. All three numeric input boxes on the QuickPizza home page share the exact same non-unique ID (`id="floating_filled"`), so `$$("#floating_filled").length` returns `3` in Chrome DevTools and cannot distinguish the calories input from the other fields. Because of that collision, the tests must traverse from the visible `<label>` text (`Max Calories per Slice`) to its sibling `<input>` element (`xpath://label[contains(.,'Max Calories')]/../input` in Robot Framework and `cy.contains('label', 'Max Calories per Slice').siblings('input')` in Cypress). Giving that input a unique, descriptive ID such as `id="max-calories-per-slice"` would allow tests to target it directly via `id:max-calories-per-slice` or `#max-calories-per-slice`. That change makes locators shorter, faster to write, and immune to breaking if the label wording or surrounding HTML layout changes.
+2. Comparing the `tool` displayed on the `/admin` list entry (`(tool=...,`) against the `tool` returned on the home page recommendation in Step 4 is a **consistency oracle** (cross-checking two views/states of the same system against each other). Because the recommended tool is chosen dynamically by QuickPizza on each request, the test cannot hardcode a fixed expected string beforehand and instead verifies that both interfaces agree on the generated record. This check would catch a backend persistence or mapping bug where the `/api/pizza` endpoint returns one tool (such as `Scissors`) in the UI response, while saving a default, null, or mismatched tool value in the database shown on `/admin`.
+3. To verify that the generated pizza actually satisfies the `Must be vegetarian` restriction, the test can inspect the ingredients returned in the `POST /api/pizza` network response or displayed on the recommendation card and assert that none belong to a known list of non-vegetarian items (or check the response payload's `"vegetarian": true` field alongside its `ingredients` array). In Cypress, `cy.intercept('POST', '/api/pizza').as('pizza')` already captures `response.body`, so the test could assert `expect(response.body.vegetarian).to.be.true` and verify `response.body.pizza.ingredients` against a list of meat toppings. For a purely UI-based check in Robot Framework, the page would need to render either a visible vegetarian badge/status in `#recommendations` or list every ingredient name with clear dietary metadata so the test can validate them against an allowed vegetarian ingredient list.
+4. Robot Framework required explicit `Wait Until ...` keywords (such as `Wait Until Element Is Visible css:h1` and `Wait Until Page Contains Element id:svelte-announcer`) paired with `timeout=10s`, whereas Cypress automatically retried every `cy.get()` and `.should()` assertion up to `defaultCommandTimeout: 10000` without manual wait steps—and even let us assert directly on `POST /api/pizza` via `cy.intercept`. Writing QP-01 was noticeably faster in Cypress because chaining commands and inspecting `request.body`/`response.body` required less boilerplate than maintaining separate `.robot` and `.resource` keyword definitions and importing `String` and `DateTime` libraries. For debugging and evidence, both tools produced clear artifacts: Robot Framework generated detailed step-by-step `log.html` reports with embedded screenshots (`qp01-step3-fields.png` through `qp01-step7-admin-list.png`), while Cypress recorded a full `.mp4` video (`pizza-scenario.cy.js.mp4`) showing the Command Log synchronized side-by-side with the browser view.
+5. For Project 2, I would choose **Cypress** as the automated UI testing tool. First, Cypress's built-in automatic retrying (`defaultCommandTimeout`) and native network interception (`cy.intercept` and `cy.wait('@alias')`) eliminate flaky timing issues on dynamic pages while verifying both the UI and backend API payloads in one flow. Second, Cypress's interactive runner, automatic failure screenshots, and full-run `.mp4` video recordings (`video: true`) provide immediate visual debugging and ready-to-submit test evidence without needing external screen-recording software or manual ChromeDriver version matching.
+6. If QuickPizza changed the locator of the `Max Calories per Slice` input box, you would only update the `${MAX CALORIES}` variable in one place inside `robot/resources/quickpizza.resource` (under `*** Variables ***`). Because both `Turn On Advanced` (which checks `Element Should Be Visible ${MAX CALORIES}`) and `Fill In The Pizza Request` (which runs `Input Text ${MAX CALORIES}` and `Textfield Value Should Be ${MAX CALORIES}`) reference that single variable, `pizza_scenario.robot` never contains raw XPath or CSS selectors. Keeping all locators isolated in the resource file prevents cascading edits across test cases whenever the application's DOM changes.
+7. Cypress automatically clears browser cookies and local storage before every `it(...)` block to keep tests isolated. In QuickPizza, a session cookie pins the browser to the specific backend server instance that stored the pizza created in Step 4, so the `/admin` page in Steps 6–7 only displays that pizza if it runs within the same browser session. If Steps 6 and 7 were split into a second `it(...)` test, Cypress would wipe the session cookie before visiting `/admin`, potentially routing the admin request to a different QuickPizza server instance where `pizzaName` does not exist and causing `cy.contains('li', pizzaName)` to time out and fail.
