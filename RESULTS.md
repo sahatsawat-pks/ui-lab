@@ -112,7 +112,20 @@ Elapsed Time:	00:00:06.944
   - node --version: v26.0.0
   - npm --version: 12.2.3
   - npx cypress version: 16.2.1 (stable)
-- Step 4.3, failure message for the wrong title:
+- Step 4.3, failure message for the wrong title: 
+```
+1) Web form
+       fills in the fields and sends the form:
+
+      Timed out retrying after 10000ms
+      + expected - actual
+
+      -'Web form'
+      +'Web Form'
+      
+      at Context.eval (webpack://cypress/./cypress/e2e/web-form.cy.js:6:19)
+
+```
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
 - Step 4.7, the line of the admin list that shows your pizza:
 - Step 4.8, run 1, result, duration and pizza name:
